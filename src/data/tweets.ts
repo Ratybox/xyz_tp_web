@@ -78,5 +78,29 @@ export const initialTweets: Array<Tweet> = [
         authorHandle: "kjohnson",
         content: "Trajectoire vérifiée à la main. John Glenn peut décoller.",
         createdAt: "2026-07-10T15:25:00.000Z"
+    },
+    {
+        id: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d2001",
+        authorName: "Charles Babbage",
+        authorHandle: "babbage",
+        content: "Moi je te crois Ada ! Il faut juste que je finisse de construire la machine…",
+        createdAt: "2026-07-01T10:00:00.000Z",
+        parentId: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d1001"
+    },
+    {
+        id: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d2002",
+        authorName: "Alan Turing",
+        authorHandle: "turing",
+        content: "Je suis sûr qu'on pourra un jour faire tourner ces idées sur une vraie machine.",
+        createdAt: "2026-07-01T12:30:00.000Z",
+        parentId: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d1001"
+    },
+    {
+        id: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d2003",
+        authorName: "Ken Thompson",
+        authorHandle: "ken",
+        content: "Et bientôt on réécrit Unix avec !",
+        createdAt: "2026-07-08T14:00:00.000Z",
+        parentId: "0b7f3c52-1a4e-4d8b-9f21-3c6a8e5d1008"
     }
 ];

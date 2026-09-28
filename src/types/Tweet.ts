@@ -10,4 +10,5 @@ export type Tweet = {
     content: string;
     image?: TweetImage;
     createdAt: string;
+    parentId?: string;
 };

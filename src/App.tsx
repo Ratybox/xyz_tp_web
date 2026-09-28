@@ -1,11 +1,14 @@
-import { TweetsList } from "./components/TweetsList";
-import { initialTweets } from "./data/tweets";
+import { Link, Outlet } from "react-router-dom";
 
 const App = (): React.JSX.Element => {
     return (
         <main>
-            <h1>XYZ</h1>
-            <TweetsList tweets={initialTweets} />
+            <header>
+                <h1>
+                    <Link to="/">XYZ</Link>
+                </h1>
+            </header>
+            <Outlet />
         </main>
     );
 }

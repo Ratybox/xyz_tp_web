@@ -32,3 +32,8 @@ main {
     object-fit: contain;
     border-radius: 8px;
 }
+
+header a {
+    color: black;
+    text-decoration: none;
+}
