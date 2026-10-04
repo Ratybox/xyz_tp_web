@@ -6,7 +6,7 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 - Nom : **Badache**
 - Adresse mail universitaire : **radhi.badache6@univ-lorraine.etu**
 - Groupe de TD : **G1**
-- Adresse du dépôt GitHub privé : [xyz_tp_web](https://github.com/Ratybox/xyz_tp_web)
+- Adresse du dépôt GitHub privé : https://github.com/Ratybox/xyz_tp_web
 
 ## Lancer le projet
 
