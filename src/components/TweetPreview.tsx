@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { Tweet } from "../types/Tweet";
+import { Avatar } from "./Avatar";
 
 const MAX_LENGTH = 180;
 
 type TweetPreviewProps = {
     tweet: Tweet;
     linkToDetail?: boolean;
+    onToggleLike: (id: string) => void;
 };
 
-export const TweetPreview = ({ tweet, linkToDetail = true }: TweetPreviewProps): React.JSX.Element => {
+export const TweetPreview = ({ tweet, linkToDetail = true, onToggleLike }: TweetPreviewProps): React.JSX.Element => {
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
     const isLong = tweet.content.length > MAX_LENGTH;
@@ -25,9 +27,14 @@ export const TweetPreview = ({ tweet, linkToDetail = true }: TweetPreviewProps):
 
     return (
         <article className="tweet">
-            <p>
-                <strong>{tweet.authorName}</strong> <span className="handle">@{tweet.authorHandle}</span>
-            </p>
+            <div className="tweet-author">
+                <Avatar name={tweet.authorName} />
+                <p>
+                    <Link to={`/authors/${tweet.authorHandle}`} className="author-link">
+                        <strong>{tweet.authorName}</strong> <span className="handle">@{tweet.authorHandle}</span>
+                    </Link>
+                </p>
+            </div>
             <p className="date">{date}</p>
             {image}
             <p>{displayedContent}</p>
@@ -36,6 +43,12 @@ export const TweetPreview = ({ tweet, linkToDetail = true }: TweetPreviewProps):
                     {isExpanded ? "Voir moins" : "Voir plus"}
                 </button>
             )}
+            <p>
+                <button className={tweet.likedByMe ? "like-button liked" : "like-button"} onClick={() => onToggleLike(tweet.id)}>
+                    {tweet.likedByMe ? "Je n'aime plus" : "J'aime"}
+                </button>{" "}
+                <span className="likes">{tweet.likes} J'aime</span>
+            </p>
             {linkToDetail && (
                 <p>
                     <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
